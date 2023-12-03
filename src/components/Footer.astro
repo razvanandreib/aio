@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo/aio-logo-solid.png";
+
+import { navLinks, socialLinks } from "../utils/lib";
+---
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <Image src={Logo} alt="Logo AIO" width="150" />
+    </div>
+    <div class="footer-utils">
+      <div class="footer-utils__info">
+        <h6>Informatii de contact</h6>
+        <p>Oradea</p>
+        <p>telefon: <a href='tel="0724.215.222"'>0724.215.222</a></p>
+        <p>e-mail: <a href="mailto:offcei@aio.ro">office@aio.ro</a></p>
+      </div>
+      <div class="footer-utils__links">
+        <h6>Linkuri</h6>
+        {navLinks.map((info) => <a href={info.link}>{info.text}</a>)}
+      </div>
+      <div class="footer-utils__links">
+        <h6>Linkuri</h6>
+        {socialLinks.map((info) => <a href={info.link}>{info.text}</a>)}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  footer {
+    @include flex-center;
+  }
+  .footer-container {
+    @include flex-center;
+    gap: 2rem;
+    max-width: 102.4rem;
+    width: 100%;
+  }
+
+  .footer-utils {
+    @include flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $primary-color;
+    padding: 4rem 3rem;
+  }
+
+  .footer-utils__info {
+    @include flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    > h6 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.3rem;
+    }
+    > p {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      color: $para-color;
+    }
+  }
+
+  .footer-utils__links {
+    @include flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    > h6 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.3rem;
+    }
+
+    > a {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      color: $para-color;
+    }
+  }
+</style>

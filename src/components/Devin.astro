@@ -1,0 +1,32 @@
+---
+
+---
+
+<section class="devin-container">
+  <div class="devin">
+    <div class="devin__devin">
+      <a href="/implicate">Devino Voluntar</a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .devin {
+    width: 100%;
+    margin: 3rem 0;
+
+    &__devin {
+      @include flex-center;
+      background-color: $primary-color;
+      padding: 6rem 0;
+
+      > a {
+        width: 7ch;
+        font-size: 3rem;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+  }
+</style>

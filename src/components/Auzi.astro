@@ -1,0 +1,100 @@
+---
+
+---
+
+<section class="auzi-noi">
+  <h4>Auzi De La Noi</h4>
+  <div class="auzi-noi__text">
+    <p>
+      Fundația AIO s-a născut dintr-o viziune îndrăzneață de a face o diferență
+      palpabilă în viețile celor aflați în nevoie. Am deschis această fundație
+      cu convingerea profundă că fiecare individ merită șansa la o viață mai
+      bună și la sprijin în momente dificile. Misiunea noastră este să oferim
+      ajutor, compasiune și resurse esențiale, construind astfel o comunitate
+      mai puternică și mai unită. În spatele Fundației AIO stă dorința de a
+      aduce lumină și speranță acolo unde este mai mult ca niciodată necesar.
+    </p>
+    <img src="/src/assets/imagini/quote.png" alt="quote" />
+  </div>
+
+  <div class="auzi-noi__fondatoare">
+    <div class="auzi-noi__fondatoare-avatar">
+      <img src="/src/assets/imagini/ioana-orzan.png" alt="Ioana Orzan" />
+    </div>
+    <div class="auzi-noi__fondatoare-text">
+      <p>Oana Orzan</p>
+      <p>Fondatoare</p>
+      <p>
+        Sunt o supraviețuitoare. Spun asta pentru că viața m-a pus încă din
+        copilărie în fața unor experiențe traumatizante, cu abuzuri fizice și
+        psihice, depășite cu mult efort, muncă și iar muncă.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .auzi-noi {
+    @include flex-col-center;
+    padding: 4rem 0;
+    margin: 0 3rem;
+    gap: 2rem;
+
+    > h4 {
+      @include h4;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      position: relative;
+      max-width: 102.4rem;
+      width: 100%;
+
+      > img {
+        position: absolute;
+        width: 10rem;
+        left: -2rem;
+        top: -4rem;
+        z-index: -2;
+      }
+      > p {
+        @include para;
+        font-weight: 600;
+        z-index: 1;
+      }
+    }
+  }
+
+  .auzi-noi__fondatoare {
+    @include flex-center;
+    gap: 2rem;
+    max-width: 60rem;
+    width: 100%;
+
+    &-avatar {
+      > img {
+        width: 40rem;
+      }
+    }
+    &-text {
+      > p:nth-of-type(1) {
+        @include para;
+        font-weight: 600;
+      }
+      > p:nth-of-type(2) {
+        @include para;
+        color: $tertiary-color;
+        font-size: 1.4rem;
+      }
+
+      > p:nth-of-type(3) {
+        @include para;
+        font-size: 1.4rem;
+        font-weight: 200;
+      }
+    }
+  }
+</style>

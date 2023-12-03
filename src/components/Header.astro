@@ -12,24 +12,7 @@ export interface Props {
 
 const { para1, title, para2 } = Astro.props;
 
-const navLinks = [
-  {
-    link: "/misiune",
-    text: "Misiunea Noastra",
-  },
-  {
-    link: "/implicate",
-    text: "Implicate",
-  },
-  {
-    link: "/noutati-stiri",
-    text: "Noutati si Stiri",
-  },
-  //   {
-  //     link: "/contact",
-  //     text: "Contact",
-  //   },
-];
+import { navLinks } from "../utils/lib";
 ---
 
 <header>
@@ -91,9 +74,7 @@ const navLinks = [
   nav {
     @include flex-center;
     width: 100%;
-    max-width: 140rem;
-    padding: 1rem 0;
-    margin: 0 auto;
+    padding: 1rem;
   }
 
   .navbar-links {
@@ -109,5 +90,6 @@ const navLinks = [
     @include flex-align-center;
     justify-content: space-between;
     width: 100%;
+    max-width: 102.4rem;
   }
 </style>

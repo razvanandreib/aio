@@ -1,7 +1,184 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
 <section class="stiri-container">
-  <div class="stiri"></div>
+  <div class="stiri">
+    <div class="stiri__header">
+      <div class="stiri__header-title">
+        <p>Stiri si evenimente</p>
+        <hr />
+      </div>
+      <div class="stiri__header-titlesecond">
+        <h2>Cititi Despre Noi & Despre Ce Organizam</h2>
+        <Button text="Mai multe" link="/stiri" />
+      </div>
+    </div>
+    <div class="stiri__articole">
+      <div class="stiri__articole-feature">
+        <div class="stiri__articole-feature-image">
+          <p>30 Noi 2023</p>
+          <img src="/src/assets/imagini/header/header-contacta.png" alt="#" />
+        </div>
+        <h3>Voluntarul isi pierde speranta, continua sa ajute</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Reprehenderit doloribus at fuga sit, doloremque similique dolorem ad
+          iure saepe incidunt.
+        </p>
+        <a href="#">Citeste mai multe</a>
+      </div>
+      <div class="stiri__articole-right">
+        <div class="stiri__articole-other">
+          <div class="stiri__articole-other-date">
+            <p>31.10.2023</p>
+          </div>
+          <div class="stiri__articole-other-text">
+            <h4><a href="#">Educatie pentru cei defavorizati</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Adipisci, blanditiis.
+            </p>
+          </div>
+        </div>
+        <div class="stiri__articole-other">
+          <div class="stiri__articole-other-date">
+            <p>31.10.2023</p>
+          </div>
+          <div class="stiri__articole-other-text">
+            <h4><a href="#">Educatie pentru cei defavorizati</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Adipisci, blanditiis.
+            </p>
+          </div>
+        </div>
+        <div class="stiri__articole-other">
+          <div class="stiri__articole-other-date">
+            <p>31.10.2023</p>
+          </div>
+          <div class="stiri__articole-other-text">
+            <h4><a href="#">Educatie pentru cei defavorizati</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Adipisci, blanditiis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .stiri-container {
+    @include flex-center;
+    background-color: $secondary-color;
+    padding: 4rem 0;
+  }
+
+  .stiri {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 1rem;
+  }
+  .stiri__header {
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-title {
+      @include flex;
+      align-items: center;
+
+      > p {
+        @include para;
+      }
+      > hr {
+        width: 10rem;
+        background-color: $grey;
+        color: $grey;
+        margin-left: 1rem;
+      }
+    }
+
+    &-titlesecond {
+      @include flex;
+      align-items: center;
+      justify-content: space-between;
+      > h2 {
+        @include h2;
+      }
+    }
+  }
+
+  .stiri__articole {
+    @include flex;
+    padding: 4rem 0 0 0;
+    gap: 5rem;
+  }
+
+  .stiri__articole-feature {
+    max-width: 40rem;
+    width: 100%;
+    > h3 {
+      @include h3;
+    }
+
+    > p {
+      @include para;
+    }
+    > a {
+      @include read-more;
+    }
+    &-image {
+      position: relative;
+      > p {
+        @include para;
+        position: absolute;
+        padding: 1.2rem;
+        background-color: $pink;
+        width: 10ch;
+      }
+    }
+  }
+
+  .stiri__articole-right {
+    @include flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .stiri__articole-other {
+    @include flex;
+    align-self: flex-start;
+    gap: 1rem;
+    max-width: 50rem;
+    width: 100%;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+
+    &-date {
+      @include flex-center;
+      background-color: $grey;
+      padding: 2rem;
+      > p {
+        @include para;
+        font-family: "Playfair Display", sans-serif;
+        color: black;
+      }
+    }
+    &-text {
+      > h4 {
+        @include h4;
+      }
+      > p {
+        @include para;
+        font-size: 1.4rem;
+      }
+    }
+  }
+</style>
