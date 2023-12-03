@@ -1,0 +1,74 @@
+@use "./variables.scss" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600&display=swap");
+
+//flex display
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-just-center {
+  @include flex;
+  justify-content: center;
+}
+
+@mixin flex-align-center {
+  @include flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-col-just-center {
+  @include flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-col-align-center {
+  @include flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-col-just-center {
+  @include flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-col-center {
+  @include flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+//nav links
+
+@mixin nav-link {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+//typo
+
+@mixin para {
+  color: rgba(68, 68, 68, 1);
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin h2 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+}

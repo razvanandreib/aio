@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+
+import Diferenta from "../assets/imagini/diferenta.png";
+
+export interface Props {
+  title: string;
+  text: string;
+  para1: string;
+  para2: string;
+}
+
+const { title, para1, para2, text } = Astro.props;
+
+import Button from "./Button.astro";
+---
+
+<section class="reu-section-container">
+  <div class="reu-section">
+    <div class="reu-section__content">
+      <h2>{title}</h2>
+      <p>{text}</p>
+      <div class="reu-section__content-list">
+        <img
+          src="/public/icons/guidance_sanitize-hands.png"
+          alt="mana de ajutor"
+        />
+        <p>{para1}</p>
+      </div>
+      <div class="reu-section__content-list">
+        <img src="/public/icons/la_people-carry.png" alt="ajutor oameni" />
+        <p>{para2}</p>
+      </div>
+      <Button text="Afla mai multe" link="/implicare" />
+    </div>
+    <div class="reu-section__image">
+      <Image src={Diferenta} alt="a face o diferenta" />
+    </div>
+  </div>
+
+  <style lang="scss">
+    @use "../styles/abstracts/index.scss" as *;
+
+    .reu-section-container {
+      @include flex-center;
+      width: 100%;
+      padding: 4rem 0;
+    }
+
+    .reu-section {
+      @include flex-center;
+      gap: 4rem;
+      flex-wrap: wrap;
+
+      &__content {
+        @include flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 60rem;
+        max-width: 100%;
+        > h2 {
+          @include h2;
+        }
+
+        > p {
+          @include para;
+        }
+        &-list {
+          @include flex-just-center;
+          gap: 1rem;
+          > img {
+            width: 4rem;
+            height: 4rem;
+          }
+          > p {
+            @include para;
+          }
+        }
+      }
+    }
+  </style>
+</section>

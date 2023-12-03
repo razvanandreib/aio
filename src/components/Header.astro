@@ -1,0 +1,113 @@
+---
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+
+import Logo from "../assets/logo/aio-logo-trans.png";
+
+export interface Props {
+  para1: string;
+  title: string;
+  para2: string;
+}
+
+const { para1, title, para2 } = Astro.props;
+
+const navLinks = [
+  {
+    link: "/misiune",
+    text: "Misiunea Noastra",
+  },
+  {
+    link: "/implicate",
+    text: "Implicate",
+  },
+  {
+    link: "/noutati-stiri",
+    text: "Noutati si Stiri",
+  },
+  //   {
+  //     link: "/contact",
+  //     text: "Contact",
+  //   },
+];
+---
+
+<header>
+  <nav>
+    <div class="navbar-container">
+      <Image src={Logo} alt="logo AIO" />
+      <div class="navbar-links">
+        {navLinks.map((info) => <a href={info.link}>{info.text}</a>)}
+      </div>
+      <Button text="Contact" link="/contact" />
+    </div>
+  </nav>
+  <div class="header-container">
+    <p>{para1}</p>
+    <h1>{title}</h1>
+    <p>{para2}</p>
+    <Button text="Afla mai multe" link="/implicate" />
+  </div>
+</header>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  header {
+    height: 100svh;
+    width: 100%;
+    background-image: url("../assets/imagini/header/header-prima-pagina.png");
+  }
+
+  .header-container {
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    > p {
+      font-size: 2rem;
+      color: #ffff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+    }
+    > p:nth-of-type(2) {
+      font-weight: 300;
+      padding: 0 0 2rem 0;
+    }
+
+    > h1 {
+      font-size: 5rem;
+      color: #ffff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+    }
+  }
+
+  nav {
+    @include flex-center;
+    width: 100%;
+    max-width: 140rem;
+    padding: 1rem 0;
+    margin: 0 auto;
+  }
+
+  .navbar-links {
+    @include flex-just-center;
+    gap: 4rem;
+
+    > a {
+      @include nav-link;
+    }
+  }
+
+  .navbar-container {
+    @include flex-align-center;
+    justify-content: space-between;
+    width: 100%;
+  }
+</style>

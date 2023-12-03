@@ -1,0 +1,27 @@
+---
+export interface Props {
+  text: string;
+  link: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<a href={link}>{text}</a>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  a {
+    @include nav-link;
+    background-color: $tertiary-color;
+    padding: 1.2rem 2rem;
+    width: auto;
+  }
+
+  a:hover {
+    @include nav-link;
+    background-color: $primary-color;
+    padding: 1.2rem 2rem;
+  }
+</style>

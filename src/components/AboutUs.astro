@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import ImagineSectiune from "../assets/imagini/imagini-sectiuni/stat-gazon.png";
+
+import Button from "./Button.astro";
+
+export interface Props {
+  para1: string;
+  title: string;
+  para2: string;
+}
+
+const { para1, title, para2 } = Astro.props;
+---
+
+<section class="about">
+  <div class="about-container">
+    <Image src={ImagineSectiune} alt="oameni pe gazon" />
+    <div class="about-text">
+      <div class="about-text__p">
+        <p>{para1}</p>
+        <hr />
+      </div>
+      <h2>{title}</h2>
+      <p>
+        {para2}
+      </p>
+      <Button text="Citeste mai mult" link="/misiune" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .about {
+    @include flex-center;
+  }
+
+  .about-container {
+    @include flex-center;
+    max-width: 90rem;
+    width: 100%;
+    gap: 5rem;
+    padding: 4rem 0;
+
+    > img {
+      height: 30rem;
+      border: 2rem solid $primary-color;
+    }
+  }
+
+  .about-text {
+    @include flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+
+    &__p {
+      @include flex-align-center;
+      > hr {
+        width: 10rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(0, 0, 0, 0.2);
+        margin: 0 0 0 1rem;
+      }
+
+      > p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+    }
+
+    > h2 {
+      @include h2;
+    }
+
+    > p {
+      @include para;
+    }
+  }
+</style>

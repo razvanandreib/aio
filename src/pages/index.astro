@@ -1,5 +1,28 @@
 ---
-import BaseLayout from "../layout/Placeholder.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Bars from "../components/Bars.astro";
+import ReusableSection from "../components/ReusableSection.astro";
 ---
 
-<BaseLayout />
+<BaseLayout title="AIO" description="AIO" content="AIO">
+  <Header
+    para1="Uniți Împreună"
+    para2="Compasiunea ne conduce. Împreună, servim, înălțăm și întărim comunitățile. Alăturați-vă nouă pentru a face diferența, un act de bunătate la fiecare pas."
+    title="Slujind omenirea, salvând vieți"
+  />
+  <AboutUs
+    para1="Despre Noi"
+    para2="Secretul fericirii constă în a-i ajuta pe ceilalți.Nu subestima niciodată diferența pe care TU o poți face în viața celor abuzați și a celor neputincioși."
+    title="Sprijinul tău este cu adevărat Puternic.​"
+  />
+
+  <Bars />
+  <ReusableSection
+    title="Cum facem o Diferenta"
+    text="Facem o diferență printr-o abordare personalizată și empatică în fiecare interacțiune. Echipa noastră dedicată și programele specializate contribuie la transformarea vieților, oferind sprijin esențial și încurajând schimbările pozitive pentru o viață sănătoasă și echilibrată. Înclinăm urechea la nevoile individuale și lucrăm împreună pentru a construi un viitor mai luminos pentru fiecare persoană pe care o servim."
+    para1="Oferim sprijin prin programe educaționale și sociale, deschizând noi oportunități pentru cei defavorizați, pentru a-i ajuta să atingă independența și succesul în viață."
+    para2="Facem diferența prin distribuirea resurselor esențiale și oferirea de consiliere, susținând indivizii și comunitățile în construirea unui fundament solid pentru viitorul lor."
+  />
+</BaseLayout>
