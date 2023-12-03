@@ -1,9 +1,12 @@
 {
   "name": "aio",
-  "module": "index.ts",
   "type": "module",
   "devDependencies": {
     "bun-types": "latest"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
