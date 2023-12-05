@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Avatar from "../assets/imagini/ioana-orzan.png";
+import Quote from "../assets/imagini/quote.png";
 ---
 
 <section class="auzi-noi">
@@ -15,7 +16,8 @@ import Avatar from "../assets/imagini/ioana-orzan.png";
       mai puternică și mai unită. În spatele Fundației AIO stă dorința de a
       aduce lumină și speranță acolo unde este mai mult ca niciodată necesar.
     </p>
-    <img src="/src/assets/imagini/quote.png" alt="quote" />
+
+    <Image src={Quote} alt="quote" />
   </div>
 
   <div class="auzi-noi__fondatoare">
@@ -76,8 +78,9 @@ import Avatar from "../assets/imagini/ioana-orzan.png";
     width: 100%;
 
     &-avatar {
+      width: 40rem;
       > img {
-        width: 40rem;
+        object-fit: contain;
       }
     }
     &-text {
