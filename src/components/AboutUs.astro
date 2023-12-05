@@ -80,4 +80,15 @@ const { para1, title, para2 } = Astro.props;
       @include para;
     }
   }
+
+  @media (max-width: 750px) {
+    .about-container {
+      flex-wrap: wrap;
+      margin: 0 4rem;
+    }
+
+    .bars {
+      flex-wrap: wrap;
+    }
+  }
 </style>

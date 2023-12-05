@@ -13,7 +13,6 @@ import { navLinks, socialLinks } from "../utils/lib";
     <div class="footer-utils">
       <div class="footer-utils__info">
         <h6>Informatii de contact</h6>
-        <p>Oradea</p>
         <p>telefon: <a href='tel="0724.215.222"'>0724.215.222</a></p>
         <p>e-mail: <a href="mailto:offcei@aio.ro">office@aio.ro</a></p>
       </div>
@@ -22,7 +21,7 @@ import { navLinks, socialLinks } from "../utils/lib";
         {navLinks.map((info) => <a href={info.link}>{info.text}</a>)}
       </div>
       <div class="footer-utils__links">
-        <h6>Linkuri</h6>
+        <h6>Sociale</h6>
         {socialLinks.map((info) => <a href={info.link}>{info.text}</a>)}
       </div>
     </div>
@@ -80,6 +79,16 @@ import { navLinks, socialLinks } from "../utils/lib";
       font-family: "Montserrat", sans-serif;
       font-size: 1.2rem;
       color: $para-color;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .footer-container {
+      flex-wrap: wrap;
+    }
+
+    .footer-utils {
+      gap: 2rem;
     }
   }
 </style>

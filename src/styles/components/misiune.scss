@@ -1,0 +1,46 @@
+@use "../abstracts/index.scss" as *;
+
+.misiune-wrapper {
+  @include flex-center;
+  margin: 0 2rem;
+}
+.misiune {
+  @include flex-center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.misiune-text {
+  @include flex;
+  flex-direction: column;
+  width: 60rem;
+  gap: 2rem;
+  > h2 {
+    @include h2;
+  }
+
+  > span {
+    @include para;
+    list-style-type: number;
+    margin: 0 0 0 4rem;
+    padding: 0 0 0 1rem;
+  }
+}
+
+.misiune-wrapper:nth-of-type(3) {
+  margin: 10rem 0 0 0;
+}
+
+.misiune-image {
+  max-width: 50rem;
+  width: 100%;
+  > img {
+    object-fit: cover;
+    width: 100%;
+    min-width: 30rem;
+    height: 40rem;
+    border: 2rem solid $primary-color;
+  }
+}

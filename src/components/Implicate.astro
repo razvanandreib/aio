@@ -1,0 +1,156 @@
+---
+import Elder from "../assets/imagini/elder.png";
+import Orzan from "../assets/imagini/Ioana-Orzan.png";
+import { Image } from "astro:assets";
+import "../styles/components/misiune.scss";
+---
+
+<section class="misiune-wrapper">
+  <div class="misiune">
+    <div class="misiune-text">
+      <h2>Obiectivele Asociației Ioana Orzan:</h2>
+      <span
+        >Bine ați venit pe pagina dedicată implicării tale în proiectele noastre
+        umanitare! Suntem Asociatia Ioana Orzan, o organizație dedicată să
+        susțină și să transforme viețile oamenilor prin acțiuni concrete și
+        proiecte cu impact social. Suntem aici pentru a vă inspira să vă
+        alăturați misiunii noastre și să fiți parte activă în schimbarea pe care
+        o aducem în comunități.</span
+      >
+      <span>
+        1. Devino Voluntar: Dacă dorești să fii mai implicat direct, te invităm
+        să devii voluntar în cadrul proiectelor noastre. Oferă-ți timpul și
+        abilitățile pentru a face o schimbare tangibilă în comunitățile noastre.
+      </span>
+      <span>
+        2. Partajează Misiunea Noastră: Spune lumii despre cauza noastră! Cu cât
+        mai multe persoane se alătură, cu atât mai mare este impactul nostru.
+        Folosește platformele de social media pentru a distribui informații
+        despre proiectele noastre și despre modul în care oamenii se pot
+        implica.
+      </span>
+      <span>
+        3. Parteneriate și Colaborări: Suntem deschiși la colaborări cu alte
+        organizații, companii și instituții care împărtășesc valorile noastre și
+        doresc să contribuie la schimbarea pozitivă.
+      </span>
+    </div>
+    <div class="misiune-image">
+      <Image src={Elder} alt="face diferenta" />
+    </div>
+  </div>
+</section>
+
+<section class="devin-voluntar-wrapper">
+  <div class="devin-voluntar">
+    <div class="devin-voluntar-form">
+      <form action="https://formsubmit.co/contact@okcreative.ro" method="POST">
+        <input type="text" name="name" required placeholder="Nume si Prenume" />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Adresa de e-mail"
+        />
+        <input type="tel" name="tel" required placeholder="Numar de telefon" />
+        <textarea placeholder="Lasa un mesaj de ce doresti sa devii voluntar"
+        ></textarea>
+        <button class="btn-form" type="submit">Vreau sa ma implic</button>
+      </form>
+    </div>
+    <div class="devin-voluntar-text">
+      <div class="devin-voluntar-text__info">
+        <h2>Inspiră și Fii Inspirat</h2>
+        <p>
+          Prin implicarea ta, poți fi parte a poveștii schimbării. Fiecare gest,
+          fiecare contribuție, contează. Împreună putem face lumea un loc mai
+          bun.
+        </p>
+        <p>
+          Alătură-te nouă în misiunea noastră de a oferi speranță și ajutor
+          acolo unde este nevoie cel mai mult. Fiecare implicare face o
+          diferență reală în viețile oamenilor.
+        </p>
+        <p>Mulțumim că ești alături de noi în această călătorie!</p>
+      </div>
+      <Image src={Orzan} alt="Ioana Orzan" />
+    </div>
+  </div>
+
+  <style lang="scss">
+    @use "../styles/abstracts/index.scss" as *;
+    .devin-voluntar-wrapper {
+      @include flex-center;
+      background-color: $primary-color;
+      padding: 10rem 0;
+      margin: 4rem 0;
+    }
+
+    .devin-voluntar {
+      @include flex;
+      max-width: 102.4rem;
+      width: 100%;
+    }
+
+    .devin-voluntar-form {
+      @include flex-center;
+      max-width: 60rem;
+      width: 100%;
+      > form {
+        @include flex-center;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        > input,
+        textarea {
+          all: unset;
+          width: 30rem;
+          background-color: white;
+          padding: 1.1rem 1rem;
+          border-radius: 5px;
+          font-size: 1.1rem;
+          font-family: "Montserrat", sans-serif;
+        }
+        textarea {
+          height: 15rem;
+        }
+      }
+    }
+
+    .devin-voluntar-text {
+      @include flex;
+      flex-direction: column;
+
+      > img {
+        align-self: flex-end;
+        margin-top: 2rem;
+        aspect-ratio: 3/4;
+      }
+    }
+
+    .devin-voluntar-text__info {
+      @include flex;
+      flex-direction: column;
+
+      > h2 {
+        @include h2;
+      }
+
+      > p {
+        @include para;
+      }
+    }
+
+    .btn-form {
+      all: unset;
+      width: 30rem;
+      padding: 1.1rem 1rem;
+      margin: 2rem 0 0 0;
+      background-color: $tertiary-color;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+    }
+  </style>
+</section>

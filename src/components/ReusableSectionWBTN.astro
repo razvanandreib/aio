@@ -11,14 +11,6 @@ export interface Props {
 }
 
 const { title, para1, para2, text } = Astro.props;
-
-import Button from "./Button.astro";
-
-export interface Props {
-  link: string;
-}
-
-const { link } = Astro.props;
 ---
 
 <section class="reu-section-container">
@@ -34,7 +26,6 @@ const { link } = Astro.props;
         <img src="/icons/la_people-carry.png" alt="ajutor oameni" />
         <p>{para2}</p>
       </div>
-      <Button text="Afla mai multe" link={link} />
     </div>
     <div class="reu-section__image">
       <Image src={Diferenta} alt="a face o diferenta" />

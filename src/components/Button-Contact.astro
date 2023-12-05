@@ -7,7 +7,7 @@ export interface Props {
 const { text, link } = Astro.props;
 ---
 
-<a class="btn-main" href={link}>{text}</a>
+<a class="btn-second" href={link}>{text}</a>
 
 <style lang="scss">
   @use "../styles/abstracts/index.scss" as *;
@@ -25,9 +25,22 @@ const { text, link } = Astro.props;
     padding: 1.2rem 2rem;
   }
 
-  @media (max-width: 600px) {
+  @media (min-width: 600px) {
     .btn-main {
       display: none;
+    }
+    .btn-second {
+      display: none;
+    }
+
+    .burger-meniu {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .btn-main {
+      display: block;
     }
   }
 </style>

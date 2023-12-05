@@ -1,0 +1,187 @@
+---
+import { Image } from "astro:assets";
+
+import Contact from "../assets/imagini/contact.png";
+---
+
+<section class="contact-wrapper">
+  <div class="contact">
+    <div class="contact__text">
+      <h2>Cum ne poti contact</h2>
+      <p>
+        Dacă sunteți în căutarea unui sprijin sau dacă aveți întrebări despre
+        programele și serviciile noastre, vă încurajăm să ne contactați. Echipa
+        Asociației Ioana Orzan este aici pentru a vă asculta și a vă oferi
+        informațiile de care aveți nevoie pentru a începe sau continua procesul
+        dumneavoastră de recuperare.
+      </p>
+      <p>
+        Puteți să ne sunați la numărul nostru de telefon dedicat sau să ne
+        trimiteți un e-mail. Suntem disponibili pentru a vă oferi detalii
+        suplimentare despre programele noastre, evenimente viitoare sau pentru a
+        vă oferi sprijin în orice întrebare aveți.
+      </p>
+
+      <p>
+        Suntem dedicați să vă oferim un mediu sigur și empatic pentru a vă ajuta
+        să vă recâștigați controlul asupra vieții și să mergeți pe drumul
+        recuperării. Așteptăm cu nerăbdare să vă cunoaștem și să colaborăm
+        împreună în această călătorie de transformare.
+      </p>
+    </div>
+    <div class="contact__image">
+      <Image src={Contact} alt="contact" />
+    </div>
+  </div>
+</section>
+
+<section class="devin-voluntar-wrapper">
+  <div class="devin-voluntar">
+    <div class="devin-voluntar-form">
+      <form action="https://formsubmit.co/contact@okcreative.ro" method="POST">
+        <input type="text" name="name" required placeholder="Nume si Prenume" />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Adresa de e-mail"
+        />
+        <input type="tel" name="tel" required placeholder="Numar de telefon" />
+        <textarea placeholder="Lasa un mesaj de ce doresti sa devii voluntar"
+        ></textarea>
+        <button class="btn-form" type="submit">Vreau sa ma implic</button>
+      </form>
+    </div>
+    <div class="devin-voluntar-text">
+      <div class="devin-voluntar-text__info">
+        <h2>Asociatia Ioana Orzan</h2>
+        <p>Interval orar:</p>
+        <p>Luni - Vineri: 9 - 17:00</p>
+        <p>Sambata - Duminica: 9 - 18:00</p>
+        <p>
+          Telefon:
+          <a href="tel:0749657822">0749.657.822</a>
+        </p>
+
+        <p>
+          Mail:
+          <a href="mailto:ioanaorzan1@gmail.com">ioanaorzan@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style lang="scss">
+    @use "../styles/abstracts/index.scss" as *;
+    .contact-wrapper {
+      @include flex-center;
+      margin-top: 4rem;
+    }
+
+    .contact {
+      @include flex-center;
+      flex-wrap: wrap;
+      max-width: 102.4rem;
+      width: 100%;
+      gap: 2rem;
+
+      &__text {
+        max-width: 50rem;
+        width: 100%;
+        > h2 {
+          @include h2;
+        }
+        > p {
+          @include para;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        max-width: 50rem;
+        > img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    .devin-voluntar-wrapper {
+      @include flex-center;
+      background-color: $primary-color;
+      padding: 10rem 0;
+      margin: 4rem 0;
+    }
+
+    .devin-voluntar {
+      @include flex;
+      max-width: 102.4rem;
+      width: 100%;
+    }
+
+    .devin-voluntar-form {
+      @include flex-center;
+      max-width: 60rem;
+      width: 100%;
+      > form {
+        @include flex-center;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        > input,
+        textarea {
+          all: unset;
+          width: 30rem;
+          background-color: white;
+          padding: 1.1rem 1rem;
+          border-radius: 5px;
+          font-size: 1.1rem;
+          font-family: "Montserrat", sans-serif;
+        }
+        textarea {
+          height: 15rem;
+        }
+      }
+    }
+
+    .devin-voluntar-text {
+      @include flex;
+      flex-direction: column;
+
+      > img {
+        align-self: flex-end;
+        margin-top: 2rem;
+        aspect-ratio: 3/4;
+      }
+    }
+
+    .devin-voluntar-text__info {
+      @include flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      > h2 {
+        @include h2;
+      }
+
+      > p {
+        @include para;
+      }
+
+      > a {
+        @include para;
+      }
+    }
+
+    .btn-form {
+      all: unset;
+      width: 30rem;
+      padding: 1.1rem 1rem;
+      margin: 2rem 0 0 0;
+      background-color: $tertiary-color;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+    }
+  </style>
+</section>
