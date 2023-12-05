@@ -7,6 +7,9 @@
     <div class="devin__devin">
       <a href="/implicate">Devino Voluntar</a>
     </div>
+    <div class="devin__devin">
+      <a href="/contact#donatii">Doneaza</a>
+    </div>
   </div>
 </section>
 
@@ -14,11 +17,14 @@
   @use "../styles/abstracts/index.scss" as *;
 
   .devin {
+    @include flex;
     width: 100%;
     margin: 3rem 0;
 
     &__devin {
       @include flex-center;
+
+      width: 100%;
       background-color: $primary-color;
       padding: 6rem 0;
 
@@ -27,6 +33,15 @@
         font-size: 3rem;
         font-family: "Montserrat", sans-serif;
       }
+    }
+  }
+  .devin__devin:nth-of-type(2) {
+    background-color: $secondary-color;
+  }
+
+  @media (max-width: 700px) {
+    .devin {
+      flex-wrap: wrap;
     }
   }
 </style>
