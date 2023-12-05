@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
+import { conturi } from "../utils/lib";
+
 import Contact from "../assets/imagini/contact.png";
 ---
 
@@ -65,127 +67,172 @@ import Contact from "../assets/imagini/contact.png";
 
         <p>
           Mail:
-          <a href="mailto:ioanaorzan1@gmail.com">ioanaorzan@gmail.com</a>
+          <a href="mailto:ioanaorzan1@gmail.com">ioanaorzan1@gmail.com</a>
         </p>
       </div>
     </div>
   </div>
+</section>
+<div class="donatii-wrapper">
+  <div class="donatii">
+    <h2>Donatiile se fac in urmatoarele conturi:</h2>
+    <div class="donatii-text">
+      {
+        conturi.map((info) => (
+          <div class="donatii-text__info">
+            <p>{info.nume}</p>
+            <p>IBAN: {info.iban}</p>
+            <p>Valuta: {info.valuta}</p>
+            <p>Swift: {info.swift}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
 
-  <style lang="scss">
-    @use "../styles/abstracts/index.scss" as *;
-    .contact-wrapper {
-      @include flex-center;
-      margin-top: 4rem;
-    }
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+  .contact-wrapper {
+    @include flex-center;
+    margin-top: 4rem;
+  }
 
-    .contact {
-      @include flex-center;
-      flex-wrap: wrap;
-      max-width: 102.4rem;
+  .contact {
+    @include flex-center;
+    flex-wrap: wrap;
+    max-width: 102.4rem;
+    width: 100%;
+    gap: 2rem;
+
+    &__text {
+      max-width: 50rem;
       width: 100%;
-      gap: 2rem;
-
-      &__text {
-        max-width: 50rem;
-        width: 100%;
-        > h2 {
-          @include h2;
-        }
-        > p {
-          @include para;
-        }
-      }
-
-      &__image {
-        width: 100%;
-        max-width: 50rem;
-
-        > img {
-          object-fit: contain;
-        }
-      }
-    }
-
-    .devin-voluntar-wrapper {
-      @include flex-center;
-      background-color: $primary-color;
-      padding: 10rem 0;
-      margin: 4rem 0;
-    }
-
-    .devin-voluntar {
-      @include flex-center;
-      flex-wrap: wrap;
-      max-width: 102.4rem;
-      width: 100%;
-      gap: 4rem;
-    }
-
-    .devin-voluntar-form {
-      @include flex-center;
-      max-width: 60rem;
-      width: 100%;
-      > form {
-        @include flex-center;
-        flex-direction: column;
-        gap: 2rem;
-        width: 100%;
-        > input,
-        textarea {
-          all: unset;
-          width: 30rem;
-          background-color: white;
-          padding: 1.1rem 1rem;
-          border-radius: 5px;
-          font-size: 1.1rem;
-          font-family: "Montserrat", sans-serif;
-        }
-        textarea {
-          height: 15rem;
-        }
-      }
-    }
-
-    .devin-voluntar-text {
-      @include flex-center;
-      flex-direction: column;
-
-      > img {
-        align-self: flex-end;
-        margin-top: 2rem;
-        aspect-ratio: 3/4;
-      }
-    }
-
-    .devin-voluntar-text__info {
-      @include flex;
-
-      flex-direction: column;
-      gap: 1.5rem;
-
       > h2 {
         @include h2;
       }
-
       > p {
         @include para;
       }
+    }
 
-      > a {
-        @include para;
+    &__image {
+      width: 100%;
+      max-width: 50rem;
+
+      > img {
+        object-fit: contain;
       }
     }
+  }
 
-    .btn-form {
-      all: unset;
-      width: 30rem;
-      padding: 1.1rem 1rem;
-      margin: 2rem 0 0 0;
-      background-color: $tertiary-color;
-      text-align: center;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.5rem;
+  .devin-voluntar-wrapper {
+    @include flex-center;
+    background-color: $primary-color;
+    padding: 10rem 0;
+    margin: 4rem 0;
+  }
+
+  .devin-voluntar {
+    @include flex-center;
+    flex-wrap: wrap;
+    max-width: 102.4rem;
+    width: 100%;
+    gap: 4rem;
+  }
+
+  .devin-voluntar-form {
+    @include flex-center;
+    max-width: 60rem;
+    width: 100%;
+    > form {
+      @include flex-center;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      > input,
+      textarea {
+        all: unset;
+        width: 30rem;
+        background-color: white;
+        padding: 1.1rem 1rem;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      textarea {
+        height: 15rem;
+      }
     }
-  </style>
-</section>
+  }
+
+  .devin-voluntar-text {
+    @include flex-center;
+    flex-direction: column;
+
+    > img {
+      align-self: flex-end;
+      margin-top: 2rem;
+      aspect-ratio: 3/4;
+    }
+  }
+
+  .devin-voluntar-text__info {
+    @include flex;
+
+    flex-direction: column;
+    gap: 1.5rem;
+
+    > h2 {
+      @include h2;
+    }
+
+    > p {
+      @include para;
+    }
+
+    > a {
+      @include para;
+    }
+  }
+
+  .btn-form {
+    all: unset;
+    width: 30rem;
+    padding: 1.1rem 1rem;
+    margin: 2rem 0 0 0;
+    background-color: $tertiary-color;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .donatii-wrapper {
+    @include flex-center;
+    flex-direction: column;
+    margin: 0 4rem 4rem 4rem;
+  }
+
+  .donatii {
+    max-width: 102.4rem;
+    width: 100%;
+
+    > h2 {
+      @include h2;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .donatii-text {
+    @include flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .donatii-text__info {
+    > p {
+      @include para;
+    }
+  }
+</style>

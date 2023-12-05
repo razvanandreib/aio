@@ -29,3 +29,24 @@ export const socialLinks = [
 ];
 
 //pages title and description
+
+export const conturi = [
+  {
+    nume: "Asociatia Ioana Orzan",
+    iban: "RO84BTRLRONCRT0674308001",
+    valuta: "RON",
+    swift: "BTRLRO22",
+  },
+  {
+    nume: "Asociatia Ioana Orzan",
+    iban: "RO34BTRLEURCRT0674308001",
+    valuta: "EUR",
+    swift: "BTRLRO22",
+  },
+  {
+    nume: "Asociatia Ioana Orzan",
+    iban: "RO38BTRLUSDCRT0674308001",
+    valuta: "USD",
+    swift: "BTRLRO22",
+  },
+];
