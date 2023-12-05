@@ -99,6 +99,7 @@ import Contact from "../assets/imagini/contact.png";
       &__image {
         width: 100%;
         max-width: 50rem;
+
         > img {
           object-fit: contain;
         }
@@ -113,9 +114,11 @@ import Contact from "../assets/imagini/contact.png";
     }
 
     .devin-voluntar {
-      @include flex;
+      @include flex-center;
+      flex-wrap: wrap;
       max-width: 102.4rem;
       width: 100%;
+      gap: 4rem;
     }
 
     .devin-voluntar-form {
@@ -144,7 +147,7 @@ import Contact from "../assets/imagini/contact.png";
     }
 
     .devin-voluntar-text {
-      @include flex;
+      @include flex-center;
       flex-direction: column;
 
       > img {
@@ -156,6 +159,7 @@ import Contact from "../assets/imagini/contact.png";
 
     .devin-voluntar-text__info {
       @include flex;
+
       flex-direction: column;
       gap: 1.5rem;
 
