@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import Avatar from "../assets/imagini/ioana-orzan.png";
 ---
 
 <section class="auzi-noi">
@@ -19,7 +20,7 @@
 
   <div class="auzi-noi__fondatoare">
     <div class="auzi-noi__fondatoare-avatar">
-      <img src="/src/assets/imagini/ioana-orzan.png" alt="Ioana Orzan" />
+      <Image src={Avatar} alt="Ioana Orzan" />
     </div>
     <div class="auzi-noi__fondatoare-text">
       <p>Oana Orzan</p>
