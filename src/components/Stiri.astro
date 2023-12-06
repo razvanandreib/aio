@@ -181,4 +181,19 @@ import Button from "./Button.astro";
       }
     }
   }
+
+  @media (max-width: 700px) {
+    .stiri__articole {
+      justify-content: center;
+      flex-wrap: wrap;
+
+      &-feature {
+        max-width: 50rem;
+      }
+    }
+
+    .stiri__header {
+      margin: 0 4rem;
+    }
+  }
 </style>
