@@ -8,6 +8,8 @@ export interface Props {
 }
 
 const { title, description, content } = Astro.props;
+
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -20,5 +22,6 @@ const { title, description, content } = Astro.props;
   </head>
   <body>
     <slot />
+    <Footer />
   </body>
 </html>

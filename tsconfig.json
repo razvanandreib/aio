@@ -1,5 +1,7 @@
 {
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
+    "strictNullChecks": true,
     "lib": ["ESNext"],
     "module": "esnext",
     "target": "esnext",
