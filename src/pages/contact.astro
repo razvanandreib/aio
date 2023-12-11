@@ -1,21 +1,21 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
-import HeaderWBTN from "../components/HeaderWBTN.astro";
 import Contact from "../components/Contact.astro";
 import Devin from "../components/Devin.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <BaseLayout
   title="Contact - AIO"
-  description="intra in legagtura cu noi"
+  description="description"
   content="sa intri in legatura cu noi"
 >
-  <HeaderWBTN
+  <Header
     para1="Afla"
     title="Cum ne poti contacta"
     para2="Compasiunea ne conduce. Împreună, servim, înălțăm și întărim comunitățile. Alăturați-vă nouă pentru a face diferența, un act de bunătate la fiecare pas."
+    url="contact"
+    show="hide"
   />
   <Contact />
-  <Footer />
 </BaseLayout>

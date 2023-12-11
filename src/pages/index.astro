@@ -7,14 +7,17 @@ import ReusableSection from "../components/ReusableSection.astro";
 import Stiri from "../components/Stiri.astro";
 import Auzi from "../components/Auzi.astro";
 import Devin from "../components/Devin.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout title="AIO" description="AIO" content="AIO">
+<BaseLayout title="AIO" description="description" content="AIO">
   <Header
     para1="Uniți Împreună"
     para2="Compasiunea ne conduce. Împreună, servim, înălțăm și întărim comunitățile. Alăturați-vă nouă pentru a face diferența, un act de bunătate la fiecare pas."
     title="Slujind omenirea, salvând vieți"
+    url="index"
+    show="show"
+    linkBtn="/implicate"
+    textBtn="Implicate"
   />
   <AboutUs
     para1="Despre Noi"
@@ -33,5 +36,4 @@ import Footer from "../components/Footer.astro";
   <!-- <Stiri /> -->
   <Auzi />
   <Devin />
-  <Footer />
 </BaseLayout>
