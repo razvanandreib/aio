@@ -250,14 +250,7 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"authors": {
-"ioana-orzab": {
-	id: "ioana-orzab";
-  collection: "authors";
-  data: any
-};
-};
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

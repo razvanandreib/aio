@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
-import HeaderWBTN from "../components/HeaderWBTN.astro";
 import Implicate from "../components/Implicate.astro";
+import Header from "../components/Header.astro";
 ---
 
 <BaseLayout
@@ -9,10 +9,12 @@ import Implicate from "../components/Implicate.astro";
   description="description"
   content="Sa ne implicam pentru un viitor mai bun"
 >
-  <HeaderWBTN
+  <Header
     para1="Afla"
     title="Cum te poti implica"
     para2="Implicarea în activitățile Asociației Ioana Orzan reprezintă o oportunitate semnificativă de a aduce schimbări pozitive în viețile celor afectați de dependențe și de a contribui la construirea unei comunități mai sănătoase și mai empate"
+    url="implicate"
+    show="hide"
   />
   <Implicate />
 </BaseLayout>

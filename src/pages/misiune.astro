@@ -1,9 +1,9 @@
 ---
-import HeaderWBTN from "../components/HeaderWBTN.astro";
 import BaseLayout from "../layout/BaseLayout.astro";
 import Misiune from "../components/Misiune.astro";
 import Auzi from "../components/Auzi.astro";
 import Devin from "../components/Devin.astro";
+import Header from "../components/Header.astro";
 ---
 
 <BaseLayout
@@ -11,10 +11,12 @@ import Devin from "../components/Devin.astro";
   description="description"
   content="Descoperiți Asociația Ioana Orzan, un loc dedicat recuperării persoanelor afectate de dependențe. Oferim programe personalizate, consiliere și sprijin pentru reintegrarea socială și profesională. Alăturați-vă comunității noastre și faceți parte din eforturile de a aduce schimbări pozitive în viețile celor care își doresc o transformare și susținere în procesul de recuperare."
 >
-  <HeaderWBTN
+  <Header
     para1="Afla care este"
     title="Misiunea Noastra"
     para2="Compasiunea ne conduce. Împreună, servim, înălțăm și întărim comunitățile. Alăturați-vă nouă pentru a face diferența, un act de bunătate la fiecare pas."
+    show="hide"
+    url="misiune"
   />
 
   <Misiune />

@@ -7,7 +7,7 @@ export interface Props {
 const { text, link } = Astro.props;
 ---
 
-<a class="btn-main" href={link}>{text}</a>
+<a id="btn-main" href={link}>{text}</a>
 
 <style lang="scss">
   @use "../styles/abstracts/index.scss" as *;
@@ -26,7 +26,7 @@ const { text, link } = Astro.props;
   }
 
   @media (max-width: 600px) {
-    .btn-main {
+    #btn-main {
       display: none;
     }
   }

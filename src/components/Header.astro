@@ -5,18 +5,22 @@ import { Image } from "astro:assets";
 
 import Logo from "../assets/logo/aio-logo-trans.png";
 
+import { navLinks } from "../utils/lib";
+
 export interface Props {
   para1: string;
   title: string;
   para2: string;
+  url: string;
+  show: string;
+  linkBtn: string;
+  textBtn: string;
 }
 
-const { para1, title, para2 } = Astro.props;
-
-import { navLinks } from "../utils/lib";
+const { para1, title, para2, url, show, linkBtn, textBtn } = Astro.props;
 ---
 
-<header>
+<header class={`image-back-${url}`}>
   <nav>
     <div class="navbar-container">
       <a href="/">
@@ -34,7 +38,9 @@ import { navLinks } from "../utils/lib";
     <p>{para1}</p>
     <h1>{title}</h1>
     <p>{para2}</p>
-    <Button text="Afla mai multe" link="/implicate" />
+    <a class={`btn-${show}`} id="btn-main" href={linkBtn}>{textBtn}</a>
+
+    <!-- <Button text="Afla mai multe" link="/implicate" class="hide" /> -->
   </div>
 </header>
 
@@ -44,7 +50,7 @@ import { navLinks } from "../utils/lib";
   header {
     height: 100svh;
     width: 100%;
-    background-image: url("/imagini/header/header-prima-pagina.png");
+    // background-image: url("/imagini/header/header-prima-pagina.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -135,8 +141,49 @@ import { navLinks } from "../utils/lib";
     }
   }
 
+  #btn-main {
+    @include nav-link;
+    background-color: $tertiary-color;
+    padding: 1.2rem 2rem;
+    width: auto;
+  }
+
+  #btn-main:hover {
+    @include nav-link;
+    background-color: $primary-color;
+    padding: 1.2rem 2rem;
+  }
+
+  @media (max-width: 600px) {
+    #btn-main {
+      display: none;
+    }
+  }
+
+  .btn-hide {
+    display: none;
+  }
+  .btn-show {
+    display: block;
+  }
+
   .display {
     @include flex-center;
+  }
+
+  .image-back-index {
+    background-image: url("/imagini/header/header-prima-pagina.png");
+  }
+
+  .image-back-misiune {
+    background-image: url("/imagini/header/header-misiunea-noastra.png");
+  }
+  .image-back-implicate {
+    background-image: url("/imagini/header/header-cum-te-poti-implica.png");
+  }
+
+  .image-back-contact {
+    background-image: url("/imagini/header/header-contacta.png");
   }
 </style>
 
