@@ -76,81 +76,94 @@ import "../styles/components/misiune.scss";
       <Image src={Orzan} alt="Ioana Orzan" />
     </div>
   </div>
-
-  <style lang="scss">
-    @use "../styles/abstracts/index.scss" as *;
-    .devin-voluntar-wrapper {
-      @include flex-center;
-      background-color: $primary-color;
-      padding: 10rem 0;
-      margin: 4rem 0;
-    }
-
-    .devin-voluntar {
-      @include flex;
-      max-width: 102.4rem;
-      width: 100%;
-    }
-
-    .devin-voluntar-form {
-      @include flex-center;
-      max-width: 60rem;
-      width: 100%;
-      > form {
-        @include flex-center;
-        flex-direction: column;
-        gap: 2rem;
-        width: 100%;
-        > input,
-        textarea {
-          all: unset;
-          width: 30rem;
-          background-color: white;
-          padding: 1.1rem 1rem;
-          border-radius: 5px;
-          font-size: 1.1rem;
-          font-family: "Montserrat", sans-serif;
-        }
-        textarea {
-          height: 15rem;
-        }
-      }
-    }
-
-    .devin-voluntar-text {
-      @include flex;
-      flex-direction: column;
-
-      > img {
-        align-self: flex-end;
-        margin-top: 2rem;
-        aspect-ratio: 3/4;
-      }
-    }
-
-    .devin-voluntar-text__info {
-      @include flex;
-      flex-direction: column;
-
-      > h2 {
-        @include h2;
-      }
-
-      > p {
-        @include para;
-      }
-    }
-
-    .btn-form {
-      all: unset;
-      width: 30rem;
-      padding: 1.1rem 1rem;
-      margin: 2rem 0 0 0;
-      background-color: $tertiary-color;
-      text-align: center;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.5rem;
-    }
-  </style>
 </section>
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+  .devin-voluntar-wrapper {
+    @include flex-center;
+    background-color: $primary-color;
+    padding: 10rem 0;
+    margin: 4rem 0;
+  }
+
+  .devin-voluntar {
+    @include flex;
+    max-width: 102.4rem;
+    width: 100%;
+  }
+
+  .devin-voluntar-form {
+    @include flex-center;
+    max-width: 60rem;
+    width: 100%;
+
+    > form {
+      @include flex-center;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      > input,
+      textarea {
+        all: unset;
+        max-width: 30rem;
+        width: 100%;
+        background-color: white;
+        padding: 1.1rem 1rem;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      textarea {
+        height: 15rem;
+      }
+    }
+  }
+
+  .devin-voluntar-text {
+    @include flex;
+    max-width: 40rem;
+    width: 100%;
+    flex-direction: column;
+
+    > img {
+      align-self: flex-end;
+      margin-top: 2rem;
+      aspect-ratio: 3/4;
+    }
+  }
+
+  .devin-voluntar-text__info {
+    @include flex;
+    flex-direction: column;
+
+    > h2 {
+      @include h2;
+    }
+
+    > p {
+      @include para;
+    }
+  }
+
+  .btn-form {
+    all: unset;
+    width: 30rem;
+    padding: 1.1rem 1rem;
+    margin: 2rem 0 0 0;
+    background-color: $tertiary-color;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .devin-voluntar {
+      flex-direction: column-reverse;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7rem;
+      margin: 0 2rem;
+    }
+  }
+</style>

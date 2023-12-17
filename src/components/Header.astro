@@ -51,9 +51,6 @@ const { para1, title, para2, url, show, linkBtn, textBtn } = Astro.props;
     height: 100svh;
     width: 100%;
     // background-image: url("/imagini/header/header-prima-pagina.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .header-container {
@@ -73,7 +70,7 @@ const { para1, title, para2, url, show, linkBtn, textBtn } = Astro.props;
       font-weight: 500;
     }
     > p:nth-of-type(2) {
-      font-weight: 300;
+      font-weight: 400;
       padding: 0 0 2rem 0;
     }
 
@@ -172,18 +169,41 @@ const { para1, title, para2, url, show, linkBtn, textBtn } = Astro.props;
   }
 
   .image-back-index {
-    background-image: url("/imagini/header/header-prima-pagina.webp");
+    background: linear-gradient(to bottom, $overlay, $overlay),
+      url("/imagini/header/header-prima-pagina.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .image-back-misiune {
-    background-image: url("/imagini/header/header-misiunea-noastra.webp");
+    background: linear-gradient(to bottom, $overlay, $overlay),
+      url("/imagini/header/header-misiunea-noastra.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .image-back-implicate {
-    background-image: url("/imagini/header/header-cum-te-poti-implica.webp");
+    background: linear-gradient(to bottom, $overlay, $overlay),
+      url("/imagini/header/header-cum-te-poti-implica.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .image-back-contact {
-    background-image: url("/imagini/header/header-contacta.webp");
+    background: linear-gradient(to bottom, $overlay, $overlay),
+      url("/imagini/header/header-contacta.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .image-back-doneaza {
+    background: linear-gradient(to bottom, $overlay, $overlay),
+      url("/imagini/header/doneaza.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
 
