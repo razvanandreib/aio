@@ -2,8 +2,7 @@
 import { Image } from "astro:assets";
 
 import Imagine from "../assets/imagini/tineri.png";
-import Imagine2 from "../assets/imagini/header/header-misiunea-noastra.png";
-import Diferenta from "../assets/imagini/diferenta.png";
+import Imagine2 from "../assets/imagini/header/header-misiunea-noastra.webp";
 
 import ReusableSectionWBTN from "./ReusableSectionWBTN.astro";
 
@@ -42,7 +41,7 @@ import "../styles/components/misiune.scss";
       </span>
     </div>
     <div class="misiune-image">
-      <Image src={Imagine} alt="face diferenta" />
+      <Image src={Imagine} alt="face diferenta" format="avif" />
     </div>
   </div>
 </section>
@@ -50,7 +49,7 @@ import "../styles/components/misiune.scss";
 <section class="misiune-wrapper">
   <div class="misiune">
     <div class="misiune-image">
-      <Image src={Imagine2} alt="face diferenta" />
+      <Image src={Imagine2} alt="face diferenta" format="avif" />
     </div>
     <div class="misiune-text">
       <span>
