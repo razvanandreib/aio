@@ -2,23 +2,29 @@
 
 .misiune-wrapper {
   @include flex-center;
-  margin: 0 2rem;
+  // margin: 0 2rem;
 }
 .misiune {
-  @include flex-center;
+  @include flex;
   flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
+  max-width: 102.4rem;
   margin-top: 2rem;
 }
 
 .misiune-text {
   @include flex;
+  align-self: flex-start;
   flex-direction: column;
-  width: 60rem;
+  width: 50rem;
   gap: 2rem;
   > h2 {
     @include h2;
+  }
+
+  > span > h6 {
+    @include para;
   }
 
   > span {
@@ -29,18 +35,32 @@
   }
 }
 
-.misiune-wrapper:nth-of-type(3) {
-  margin: 10rem 0 0 0;
+.misiune-wrapper:nth-of-type(2) {
+  margin: 3rem 0 0 0;
 }
 
 .misiune-image {
   max-width: 50rem;
   width: 100%;
+  align-self: flex-start;
+
   > img {
     object-fit: cover;
-    width: 100%;
+    width: calc(100% - 4rem);
     min-width: 30rem;
     height: 40rem;
     border: 2rem solid $primary-color;
+  }
+}
+
+@media (max-width: 1030px) {
+  .misiune {
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+  .misiune-text {
+    > span {
+      margin: 0;
+    }
   }
 }

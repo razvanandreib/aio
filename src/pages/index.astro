@@ -1,13 +1,18 @@
 ---
+import { Image } from "astro:assets";
+
 import BaseLayout from "../layout/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import AboutUs from "../components/AboutUs.astro";
 import Bars from "../components/Bars.astro";
 import ReusableSection from "../components/ReusableSection.astro";
-import Stiri from "../components/Stiri.astro";
 import Auzi from "../components/Auzi.astro";
 import Devin from "../components/Devin.astro";
-import HeaderVideo from "../components/HeaderVideo.astro";
+import Stiri from "../components/Stiri.astro";
+import Ajuta from "../components/Ajuta.astro";
+
+//imagini
+import Imagine from "../assets/imagini/elder.png";
 ---
 
 <BaseLayout title="AIO" description="description" content="AIO">
@@ -33,8 +38,13 @@ import HeaderVideo from "../components/HeaderVideo.astro";
     text="Facem o diferență printr-o abordare personalizată și empatică în fiecare interacțiune. Echipa noastră dedicată și programele specializate contribuie la transformarea vieților, oferind sprijin esențial și încurajând schimbările pozitive pentru o viață sănătoasă și echilibrată. Înclinăm urechea la nevoile individuale și lucrăm împreună pentru a construi un viitor mai luminos pentru fiecare persoană pe care o servim."
     para1="Oferim sprijin prin programe educaționale și sociale, deschizând noi oportunități pentru cei defavorizați, pentru a-i ajuta să atingă independența și succesul în viață."
     para2="Facem diferența prin distribuirea resurselor esențiale și oferirea de consiliere, susținând indivizii și comunitățile în construirea unui fundament solid pentru viitorul lor."
+    linkBtn="/misiune"
+    linkText="Afla"
+    image={Imagine}
+    showBtn="hide"
   />
   <!-- <Stiri /> -->
+  <Ajuta />
   <Auzi />
   <Devin />
 </BaseLayout>

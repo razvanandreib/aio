@@ -1,0 +1,73 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="ajuta-wrapper">
+  <div class="ajuta">
+    <div class="ajuta-header">
+      <div class="ajuta-header-title">
+        <p>Ajuta</p>
+        <hr />
+      </div>
+      <div class="ajuta-header-second-title">
+        <h2>Ajuta prin a dona</h2>
+        <Button link="/doneaza" text="Doneaza" />
+      </div>
+    </div>
+    <div class="text">
+      <p>
+        Dă O Mână de Ajutor! Donează Pentru Schimbarea Vieților! Cu doar câteva
+        clicuri, poți face o diferență semnificativă în viețile celor afectați
+        de adicții de droguri. Fiecare donație contează și susține programele
+        noastre de prevenire și intervenție. Ajută-ne să oferim speranță și
+        susținere. Donează astăzi pentru a contribui la transformarea vieților
+        tinerilor!
+      </p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .ajuta-wrapper {
+    @include flex-center;
+    margin: 4rem 0;
+    padding: 0 3rem;
+  }
+  .ajuta {
+    max-width: 102.4rem;
+    width: 100%;
+  }
+
+  .ajuta-header-title {
+    @include flex;
+    align-items: center;
+
+    > p {
+      @include para;
+    }
+    > hr {
+      width: 10rem;
+      background-color: rgb(223, 223, 223);
+      color: rgb(223, 223, 223);
+      margin-left: 1rem;
+    }
+  }
+
+  .ajuta-header-second-title {
+    @include flex;
+    justify-content: space-between;
+
+    > h2 {
+      @include h2;
+    }
+  }
+
+  .text {
+    margin: 2rem 0;
+    > p {
+      @include para;
+    }
+  }
+</style>

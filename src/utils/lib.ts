@@ -8,9 +8,13 @@ export const navLinks = [
     text: "Implica-te",
   },
   // {
-  //   link: "/noutati-stiri",
-  //   text: "Noutati si Stiri",
+  //   link: "/stiri-noutati",
+  //   text: "Stiri si Noutati",
   // },
+  {
+    link: "/doneaza",
+    text: "Doneaza",
+  },
 ];
 
 export const socialLinks = [

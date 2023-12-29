@@ -1,6 +1,8 @@
 ---
 import Elder from "../assets/imagini/elder.png";
 import Orzan from "../assets/imagini/Ioana-Orzan.png";
+import Implicate from "../assets/imagini/implicate.jpg";
+
 import { Image } from "astro:assets";
 import "../styles/components/misiune.scss";
 ---
@@ -22,21 +24,15 @@ import "../styles/components/misiune.scss";
         să devii voluntar în cadrul proiectelor noastre. Oferă-ți timpul și
         abilitățile pentru a face o schimbare tangibilă în comunitățile noastre.
       </span>
+
       <span>
-        2. Partajează Misiunea Noastră: Spune lumii despre cauza noastră! Cu cât
-        mai multe persoane se alătură, cu atât mai mare este impactul nostru.
-        Folosește platformele de social media pentru a distribui informații
-        despre proiectele noastre și despre modul în care oamenii se pot
-        implica.
-      </span>
-      <span>
-        3. Parteneriate și Colaborări: Suntem deschiși la colaborări cu alte
+        2. Parteneriate și Colaborări: Suntem deschiși la colaborări cu alte
         organizații, companii și instituții care împărtășesc valorile noastre și
         doresc să contribuie la schimbarea pozitivă.
       </span>
     </div>
     <div class="misiune-image">
-      <Image src={Elder} alt="face diferenta" />
+      <Image src={Implicate} alt="face diferenta" />
     </div>
   </div>
 </section>
@@ -90,6 +86,8 @@ import "../styles/components/misiune.scss";
     @include flex;
     max-width: 102.4rem;
     width: 100%;
+    gap: 2rem;
+    margin: 0 2rem;
   }
 
   .devin-voluntar-form {
@@ -105,7 +103,7 @@ import "../styles/components/misiune.scss";
       > input,
       textarea {
         all: unset;
-        max-width: 30rem;
+        max-width: 35rem;
         width: 100%;
         background-color: white;
         padding: 1.1rem 1rem;
@@ -121,7 +119,7 @@ import "../styles/components/misiune.scss";
 
   .devin-voluntar-text {
     @include flex;
-    max-width: 40rem;
+    max-width: 55rem;
     width: 100%;
     flex-direction: column;
 

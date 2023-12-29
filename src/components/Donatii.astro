@@ -1,0 +1,166 @@
+---
+let donateText = [
+  {
+    h2: "Cum Poți Ajuta:",
+    p: "Fiecare donație, indiferent de mărime, contribuie la realizarea visului nostru de a face o lume mai bună. Dacă dorești să ni te alături în eforturile noastre, iată cum poți contribui:",
+    span1: "Donatii Financiare",
+    span2: "Donatii de Timp",
+    span3: "Partajarea cu Altii",
+    li1: "Fiecare sumă contează. Poți face o donație unică sau să te implici în programul nostru de donații lunar.",
+    li2: "Dacă timpul tău este o resursă pe care poți să o împarți cu cei în nevoie, suntem întotdeauna în căutare de voluntari dedicați..",
+    li3: "Răspândește cuvântul despre misiunea noastră. Cu cât mai mulți oameni află despre Asociația AIO, cu atât putem face mai multe lucruri extraordinare împreună.",
+  },
+  {
+    h2: "Impactul Donațiilor Tale:",
+    p: "Fiecare contribuție are un impact semnificativ. Cu ajutorul tău, putem oferi:",
+    // span1: "Donatii Financiare",
+    // span2: "Donatii de Timp",
+    // span3: "Partajarea cu Altii",
+    li1: "Hrană și îngrijire medicală celor nevoiași.",
+    li2: "Oportunități educaționale pentru copii și adulți.",
+    li3: "Program de îngrijire pentru persoanele în vârstă și vulnerabile.",
+  },
+];
+
+import { conturi } from "../utils/lib";
+---
+
+<section class="donate-container">
+  <div class="donate">
+    <p>
+      Bun venit pe pagina noastră dedicată donațiilor pentru Asociația AIO -
+      organizația noastră pasionată de a face o diferență în viețile oamenilor
+      și de a aduce lumină în locuri întunecate. Cu un scop nobil de a ajuta cei
+      aflați în dificultate, Asociația AIO se bazează pe generozitatea
+      comunității pentru a susține proiectele noastre umanitare.
+    </p>
+    {
+      donateText.map((info) => (
+        <div class="donate__text">
+          <h2>{info.h2}</h2>
+          <p>{info.p}</p>
+          <ul>
+            <li>
+              <span>{info.span1}</span> {info.li1}
+            </li>
+            <>
+              <li>
+                <span>{info.span2}</span> {info.li2}
+              </li>
+              <li>
+                <span>{info.span3}</span> {info.li3}
+              </li>
+            </>
+          </ul>
+        </div>
+      ))
+    }
+    <h2>Transparență și Responsabilitate:</h2>
+    <p>
+      Suntem mândri să fim o organizație transparentă. Informațiile despre modul
+      în care sunt utilizate fondurile tale vor fi disponibile pe site-ul
+      nostru, iar rapoartele noastre anuale vor fi publice.
+    </p>
+    <p>
+      Te invităm să faci parte din povestea noastră de compasiune și speranță.
+      Fiecare gest de bunătate contează și face o diferență în viețile celor
+      care au nevoie de ajutor. Donează astăzi pentru Asociația AIO și ajută-ne
+      să construim un viitor mai luminos pentru toți!
+    </p>
+    <p>Mulțumim pentru sprijinul tău generos!</p>
+  </div>
+</section>
+
+<div class="donatii-wrapper" id="donatii">
+  <div class="donatii">
+    <h2>Donatiile se fac in urmatoarele conturi:</h2>
+    <div class="donatii-text">
+      {
+        conturi.map((info) => (
+          <div class="donatii-text__info">
+            <p>{info.nume}</p>
+            <p>IBAN: {info.iban}</p>
+            <p>Valuta: {info.valuta}</p>
+            <p>Swift: {info.swift}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .donate-container {
+    @include flex-center;
+    padding: 4rem 0;
+    margin: 0 2rem;
+  }
+
+  .donate {
+    max-width: 102.4rem;
+    width: 100%;
+
+    > p,
+    h2 {
+      padding-top: 1rem;
+    }
+    > p {
+      @include para;
+    }
+
+    > h2 {
+      @include h2;
+    }
+
+    &__text {
+      > h2,
+      p {
+        padding: 1rem 0;
+      }
+
+      > h2 {
+        @include h2;
+      }
+      > p {
+        @include para;
+      }
+
+      > ul > li {
+        @include para;
+        margin-left: 2rem;
+        padding-top: 1rem;
+      }
+    }
+  }
+
+  .donatii-wrapper {
+    @include flex-center;
+    flex-direction: column;
+    margin: 0 2rem 2rem 2rem;
+  }
+
+  .donatii {
+    max-width: 102.4rem;
+    width: 100%;
+    margin: 4rem 0;
+
+    > h2 {
+      @include h2;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .donatii-text {
+    @include flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .donatii-text__info {
+    > p {
+      @include para;
+    }
+  }
+</style>

@@ -1,24 +1,20 @@
 ---
 import { Image } from "astro:assets";
 
-import Diferenta from "../assets/imagini/diferenta.png";
-
 export interface Props {
   title: string;
   text: string;
   para1: string;
   para2: string;
-}
-
-const { title, para1, para2, text } = Astro.props;
-
-import Button from "./Button.astro";
-
-export interface Props {
+  image: string;
   link: string;
+  showBtn: string;
+  linkBtn: string;
+  textBtn: string;
 }
 
-const { link } = Astro.props;
+const { title, para1, para2, text, link, image, showBtn, linkBtn, textBtn } =
+  Astro.props;
 ---
 
 <section class="reu-section-container">
@@ -34,67 +30,97 @@ const { link } = Astro.props;
         <img src="/icons/la_people-carry.png" alt="ajutor oameni" />
         <p>{para2}</p>
       </div>
-      <Button text="Afla mai multe" link={link} />
+      <a id="btn-main" class={`btn-${showBtn}`} href={linkBtn}>{textBtn}</a>
     </div>
     <div class="reu-section__image">
-      <Image src={Diferenta} alt="a face o diferenta" />
+      <Image src={image} alt="a face o diferenta" />
     </div>
   </div>
+</section>
 
-  <style lang="scss">
-    @use "../styles/abstracts/index.scss" as *;
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
 
-    .reu-section-container {
-      @include flex-center;
+  .reu-section-container {
+    @include flex-center;
+    width: 100%;
+    background-image: url("../assets/imagini//hands.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    margin: 4rem 0 0 0;
+  }
+
+  .reu-section {
+    @include flex-center;
+    max-width: 102.4rem;
+    width: calc(100% - 4rem);
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    &__content {
+      @include flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      max-width: 50rem;
       width: 100%;
-      padding: 4rem 0;
-      background-image: url("../assets/imagini//hands.png");
-      background-position: bottom right;
-      background-repeat: no-repeat;
-    }
 
-    .reu-section {
-      @include flex-center;
-      max-width: 102.4rem;
-      width: 100%;
-      gap: 4rem;
-      flex-wrap: wrap;
+      > h2 {
+        @include h2;
+      }
 
-      &__content {
-        @include flex;
-        flex-direction: column;
-        align-items: flex-start;
+      > p {
+        @include para;
+      }
+      &-list {
+        @include flex-just-center;
         gap: 1rem;
-        max-width: 50rem;
-        width: 100%;
-        margin: 0 4rem;
-        > h2 {
-          @include h2;
+        > img {
+          width: 4rem;
+          height: 4rem;
         }
-
         > p {
           @include para;
         }
-        &-list {
-          @include flex-just-center;
-          gap: 1rem;
-          > img {
-            width: 4rem;
-            height: 4rem;
-          }
-          > p {
-            @include para;
-          }
-        }
-      }
-
-      &__image {
-        > img {
-          object-fit: contain;
-          max-width: 40rem;
-          width: 100%;
-        }
       }
     }
-  </style>
-</section>
+
+    &__image {
+      max-width: 45rem;
+
+      > img {
+        width: calc(100% - 4rem);
+        height: 40rem;
+        object-fit: cover;
+        border: 2rem solid $primary-color;
+      }
+    }
+  }
+
+  .btn-show {
+    display: block;
+  }
+
+  .btn-hide {
+    display: none;
+  }
+
+  #btn-main {
+    @include nav-link;
+    background-color: $tertiary-color;
+    padding: 1.2rem 2rem;
+    width: auto;
+  }
+
+  #btn-main:hover {
+    @include nav-link;
+    background-color: $primary-color;
+    padding: 1.2rem 2rem;
+  }
+
+  @media (max-width: 600px) {
+    #btn-main {
+      display: none;
+    }
+  }
+</style>

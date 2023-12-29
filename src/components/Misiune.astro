@@ -1,18 +1,24 @@
 ---
 import { Image } from "astro:assets";
 
-import Imagine from "../assets/imagini/tineri.png";
-import Imagine2 from "../assets/imagini/header/header-misiunea-noastra.webp";
+import Conversatie from "../assets/imagini/misiune-ajuta.jpg";
+import Diferenta from "../assets/imagini/diferenta.png";
+import Obiective from "../assets/imagini/obiective.jpg";
+import Helping from "../assets/imagini/helping.jpg";
 
-import ReusableSectionWBTN from "./ReusableSectionWBTN.astro";
+import ReusableSection from "./ReusableSection.astro";
 
 import "../styles/components/misiune.scss";
 ---
 
-<ReusableSectionWBTN
+<ReusableSection
   title="Asociatia Ioana Orzan"
   para1="Un loc al speranței și al schimbării pentru cei care își doresc să depășească dependența de substanțe. Suntem o organizație dedicată reabilitării oamenilor din droguri și susținerii lor în parcursul spre o viață sănătoasă și echilibrată."
   para2="Misiunea noastră este să oferim sprijin și resurse celor afectați de dependența de droguri, creând un mediu sigur și empatic în care aceștia să își poată reconstrui viața. Asociația Ioana Orzan este numită în onoarea fondatoarei noastre, o personalitate dedicată și pasionată de cauza reabilitării, care a adus împreună o echipă de profesioniști dedicați în domeniul sănătății mentale și al recuperării dependențelor."
+  image={Helping}
+  showBtn="hide"
+  linkBtn="/doneaza"
+  textBtn="Hello"
 />
 
 <section class="misiune-wrapper">
@@ -20,28 +26,26 @@ import "../styles/components/misiune.scss";
     <div class="misiune-text">
       <h2>Obiectivele Asociației Ioana Orzan:</h2>
       <span>
-        1. Recuperare Individualizată: Furnizarea unor programe de recuperare
-        personalizate, adaptate nevoilor și circumstanțelor individuale ale
-        fiecărui membru al asociației, pentru a asigura o abordare eficientă și
-        sustenabilă în procesul de depășire a dependenței.
+        <h6>1. Recuperare Individualizată:</h6> Furnizarea unor programe de
+        recuperare personalizate, adaptate nevoilor și circumstanțelor
+        individuale ale fiecărui membru al asociației, pentru a asigura o
+        abordare eficientă și sustenabilă în procesul de depășire a dependenței.
       </span>
       <span>
-        2. Consiliere și Suport Emoțional: Oferirea de servicii de consiliere
-        individuală și în grup, facilitând un spațiu sigur și confidențial în
-        care membrii asociației pot împărtăși experiențele lor, primind în
-        același timp sprijin emoțional și strategii practice pentru gestionarea
-        stresului și a presiunilor cotidiene.
+        <h6>2. Consiliere și Suport Emoțional:</h6> Oferirea de servicii de
+        consiliere individuală și în grup, facilitând un spațiu sigur și
+        confidențial în care membrii asociației pot împărtăși experiențele lor,
+        primind în același timp sprijin emoțional și strategii practice pentru
+        gestionarea stresului și a presiunilor cotidiene.
       </span>
       <span>
-        3. Reintegrare Socială și Profesională: Dezvoltarea programelor și
-        resurselor care facilitează reintegrarea socială și profesională a
-        persoanelor aflate în proces de recuperare. Aceasta include formare
-        profesională, consiliere pentru căutarea de locuri de muncă și sprijin
-        în construirea unor relații pozitive în comunitate.
+        <h6>3. Reintegrare Socială și Profesională:</h6> Dezvoltarea programelor
+        și resurselor care facilitează reintegrarea socială și profesională a
+        persoanelor aflate în proces de recuperare.
       </span>
     </div>
     <div class="misiune-image">
-      <Image src={Imagine} alt="face diferenta" format="avif" />
+      <Image src={Conversatie} alt="face diferenta" format="avif" />
     </div>
   </div>
 </section>
@@ -49,20 +53,20 @@ import "../styles/components/misiune.scss";
 <section class="misiune-wrapper">
   <div class="misiune">
     <div class="misiune-image">
-      <Image src={Imagine2} alt="face diferenta" format="avif" />
+      <Image src={Obiective} alt="face diferenta" format="avif" />
     </div>
     <div class="misiune-text">
       <span>
-        4. Prevenire și Educație: Desfășurarea de campanii de prevenire a
-        dependențelor și furnizarea de resurse educaționale către comunitate,
+        <h6>4. Prevenire și Educație:</h6> Desfășurarea de campanii de prevenire
+        a dependențelor și furnizarea de resurse educaționale către comunitate,
         pentru a crește gradul de conștientizare cu privire la impactul
         dependențelor și pentru a promova un stil de viață sănătos.
       </span>
       <span>
-        5. Cercetare și Dezvoltare: Participarea la activități de cercetare în
-        domeniul dependențelor pentru a aduce în permanență îmbunătățiri în
-        abordările de recuperare și pentru a contribui la avansarea
-        cunoștințelor în acest domeniu.
+        <h6>5. Cercetare și Dezvoltare:</h6> Participarea la activități de
+        cercetare în domeniul dependențelor pentru a aduce în permanență
+        îmbunătățiri în abordările de recuperare și pentru a contribui la
+        avansarea cunoștințelor în acest domeniu.
       </span>
     </div>
   </div>
